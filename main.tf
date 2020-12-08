@@ -81,6 +81,10 @@ resource "aws_route_table_association" "public_subnet_2_route_table_associate" {
 
 resource "aws_route_table" "private_subnet_1_route_table" {
   vpc_id = aws_vpc.this.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat_1.id
+  }
   tags = {
     Name = "private_subnet_1_rt"
   }
@@ -93,6 +97,10 @@ resource "aws_route_table_association" "private_subnet_1_route_table_associate" 
 
 resource "aws_route_table" "private_subnet_2_route_table" {
   vpc_id = aws_vpc.this.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat_2.id
+  }
   tags = {
     "Name" = "private_subnet_2_rt"
   }
