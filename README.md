@@ -19,3 +19,16 @@
 |  public_subnet_2_route_table_id  |  string  | Public Subnet 1 Route Table ID  |
 |  private_subnet_1_route_table_id |  string  | Private Subnet 1 Route Table ID |
 |  private_subnet_1_route_table_id |  string  | Private Subnet 2 Route Table ID  |
+
+# Usage
+
+In your main.tf file, you can just write as below.
+Please note that `ref=<>` is refering to the commit tag on this repo.
+
+```hcl
+module "network" {
+  source         = "git@github.com:YAMABASS80/terraform-modules-vpc.git?ref=1.0.3"
+  vpc_cidr_block = var.vpc_cidr_block
+}
+```
+
