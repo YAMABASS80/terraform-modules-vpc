@@ -5,6 +5,7 @@
 |  Name  |  Type  | Description  |
 | ---- | ---- | ---- |
 |  vpc_cidr_block  |  string  | VPC CIDR range  |
+|  vpc_name  |  string  | VPC tag name  |
 
 # Outputs
 |  Name  |  Type  | Description  |
