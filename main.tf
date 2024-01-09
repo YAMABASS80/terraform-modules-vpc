@@ -121,7 +121,6 @@ resource "aws_internet_gateway" "igw" {
 }
 
 resource "aws_eip" "nat_eip_1" {
-  vpc = true
   depends_on = [ aws_internet_gateway.igw ]
   tags = {
     Name = "${var.vpc_name}-eip-1"
@@ -129,7 +128,6 @@ resource "aws_eip" "nat_eip_1" {
 }
 
 resource "aws_eip" "nat_eip_2" {
-  vpc = true
   depends_on = [ aws_internet_gateway.igw ]
   tags = {
     Name = "${var.vpc_name}-eip-1"
